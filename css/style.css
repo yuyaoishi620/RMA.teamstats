@@ -181,15 +181,6 @@ img {
     font-size: 1rem;
     line-height: 1.2;
   }
-}
-
-@media (max-width: 400px) {
-
-  #leagueTable h1 {
-    font-size: 1.3rem;
-    line-height: 1.6;
-  }
-
 
   #scheduled table thead tr th:first-child {
     width: 30%;
@@ -201,6 +192,14 @@ img {
 
   #scheduled table thead tr th:nth-child(2) {
     width: 20%;
+  }
+}
+
+@media (max-width: 400px) {
+
+  #leagueTable h1 {
+    font-size: 1.3rem;
+    line-height: 1.6;
   }
 }
 
