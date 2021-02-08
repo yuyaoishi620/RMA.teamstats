@@ -201,6 +201,10 @@ img {
     font-size: 1.3rem;
     line-height: 1.6;
   }
+
+  #scheduled table {
+    width: 70%;
+  }
 }
 
 
