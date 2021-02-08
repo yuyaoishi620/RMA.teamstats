@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>レアル・マドリード 20-21 シーズン チームスタッツ</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="leagueTable">
+    <div class="title">
+      <h1>レアル・マドリード 20-21 シーズン<br>ラ・リーガ順位表・試合スケジュール</h1>
+    </div>
+    <table width="65%">
+      <thead>
+        <tr>
+          <th width="5%" class="position">順位</th>
+          <th width="20%" class="position">クラブ</th>
+          <th width="5%">試合</th>
+          <th width="5%">勝</th>
+          <th width="5%">分</th>
+          <th width="5%">負</th>
+          <th width="5%">Pts</th>
+          <th width="5%">得点</th>
+          <th width="5%">失点</th>
+          <th width="5%">差</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in items">
+          <td height="30px" width="5%" class="position">{{ item.position }}</td>
+          <td height="30px" width="20%" class="left position"><img v-bind:src="item.team.crestUrl">{{ item.team.name }}</td>
+          <td height="30px" width="5%">{{ item.playedGames }}</td>
+          <td height="30px" width="5%">{{ item.won }}</td>
+          <td height="30px" width="5%">{{ item.draw }}</td>
+          <td height="30px" width="5%">{{ item.lost}}</td>
+          <td height="30px" width="5%">{{ item.points}}</td>
+          <td height="30px" width="5%">{{ item.goalsFor}}</td>
+          <td height="30px" width="5%">{{ item.goalsAgainst}}</td>
+          <td height="30px" width="5%">{{ item.goalDifference}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="scheduled">
+    <table>
+      <thead>
+        <tr>
+          <th width="25%">ホーム</th>
+          <th width="10%">日時<br>(日本時間)</th>
+          <th width="25%">アウェイ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in items">
+          <td width="25%"><img v-bind:src="item.awayTeam.crestUrl"><br>{{ item.awayTeam.name }}</td>
+          <td width="10%">{{ new Date(item.utcDate).toLocaleString({timeZone : 'Asia/Tokyo'}).replace(":00", "") }}</td> <!-- 日本時間に変換 -->
+          <td width="25%"><img v-bind:src="item.homeTeam.crestUrl"><br>{{ item.homeTeam.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"></script>
+  <script src="js/vue.js"></script>
+</body>
+</html>
