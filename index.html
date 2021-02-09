@@ -55,9 +55,9 @@
       </thead>
       <tbody>
         <tr v-for="item in items">
-          <td width="25%"><img v-bind:src="item.awayTeam.crestUrl"><br>{{ item.awayTeam.name }}</td>
-          <td width="10%">{{ new Date(item.utcDate).toLocaleString({timeZone : 'Asia/Tokyo'}).replace(":00", "") }}</td> <!-- 日本時間に変換 -->
           <td width="25%"><img v-bind:src="item.homeTeam.crestUrl"><br>{{ item.homeTeam.name }}</td>
+          <td width="10%">{{ new Date(item.utcDate).toLocaleString({timeZone : 'Asia/Tokyo'}).replace(":00", "") }}</td> <!-- 日本時間に変換 -->
+          <td width="25%"><img v-bind:src="item.awayTeam.crestUrl"><br>{{ item.awayTeam.name }}</td>
         </tr>
       </tbody>
     </table>
