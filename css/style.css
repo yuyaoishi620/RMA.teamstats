@@ -23,6 +23,11 @@ body {
   color: rgb(68, 65, 65);
 }
 
+#leagueTable caption {
+  font-size: 2rem;
+  color: rgb(68, 65, 65);
+}
+
 #leagueTable table {
   margin: 0 auto;
   table-layout: fixed;

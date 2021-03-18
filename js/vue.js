@@ -4,12 +4,15 @@ var leagueTable = new Vue({
   el: '#leagueTable',
   data: {
     items : null,
+    message: ''
   },
   created: function() {
     this.getTable()
   },
   methods: {
     getTable: function() {
+      this.message = 'Loading...'
+
       var vm = this
       axios.get('https://api.football-data.org/v2/competitions/PD/standings?standingType=TOTAL', {headers: {"X-Auth-Token" : " f47008b183cf4a34a864f8cac2b34868 "}})
       .then(function(response) {
@@ -58,6 +61,12 @@ var leagueTable = new Vue({
             vm.items[i].team.name = "ウエスカ"
           }
         }
+      })
+      .catch(function(error) {
+        vm.message = 'Error!' + error
+      })
+      .finally(function() {
+        vm.message = ''
       })
     }
   }
