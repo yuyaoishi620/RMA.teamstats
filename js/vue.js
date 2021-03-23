@@ -115,6 +115,8 @@ var scheduled = new Vue({
             vm.items[i].awayTeam.name = 'セビージャ'
           } else if (vm.items[i].awayTeam.id === 94) {
             vm.items[i].awayTeam.name = 'ビジャレアル'
+          } else if (vm.items[i].awayTeam.id = 64) {
+            vm.items[i].awayTeam.name = 'リヴァプール'
           }
 
 
@@ -137,8 +139,10 @@ var scheduled = new Vue({
             vm.items[i].homeTeam.name = 'グラナダ'
           } else if (vm.items[i].homeTeam.id === 77) {
             vm.items[i].homeTeam.name = 'アスレティック・ビルバオ'
+          } else if (vm.items[i].homeTeam.id === 64) {
+            vm.items[i].homeTeam.name = 'リヴァプール'
           }
-
+            
 
           
           
